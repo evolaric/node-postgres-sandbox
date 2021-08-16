@@ -3,6 +3,9 @@ import express, { Request, Response } from 'express';
 const port = 3000;
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.get('/', (_req: Request, res: Response): void => {
   res.send(`<h2>Api is up and running on port: ${port}</h2>`);
 });
